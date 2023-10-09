@@ -10,7 +10,7 @@ describe("/healthz API", () => {
   it("should return status 200 and success message", (done) => {
     chai
       .request(app)
-      .get("/healthz")
+      .get("/healt")
       .end((err, res) => {
         expect(res).to.have.status(200);
         // expect(res.body).to.have.property("status").eql("Success");
