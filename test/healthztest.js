@@ -10,11 +10,12 @@ describe("Check database connection", () => {
   it("should return status 200 and success message", (done) => {
     chai
       .request(app)
-      .get("/healthz") // Change this to the correct route path
+      .get("/healthz2") // Change this to the correct route path
       .end((err, res) => {
         if (err) {
           console.log("Connection NOT successful: " + err);
-          process.exit(1);
+          return done(err);
+          // process.exit(1);
         } else {
           expect(res).to.have.status(200);
           console.log("Connection successful.");
